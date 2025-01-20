@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="csrf-token" content="{{ csrf_token }}">
+  <title>JSON Percentage Viewer</title>
+  <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+    <h1>Upload Empire JSON file and Show Percentage of not be catched</h1>
+    <div class="upload-container">
+      <input type="file" id="jsonFile" accept="application/json">
+      <button onclick="processJson()">Calculate</button>
+    </div>
+    <div class="progress-circle" style="--percentage: 0%">
+      <span id="percentage">0%</span>
+    </div>
+    <p id="error-message"></p>
+
+  <script src="{% static 'scripts/app.js' %}"></script>
+</body>
+</html>
+
